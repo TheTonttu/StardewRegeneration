@@ -8,6 +8,6 @@
       "Build": ""
    },
    "Description": "Adds configurable health and stamina regeneration.",
-   "UniqueID": "StardewRegeneration",
+   "UniqueID": "2b2a296a-a155-48f3-afb8-c02c27923aff",
    "EntryDll": "StardewRegeneration.dll"
 }
