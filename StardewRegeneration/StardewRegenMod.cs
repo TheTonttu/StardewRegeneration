@@ -14,8 +14,6 @@ namespace Tonttu.StardewValley.Mods.StardewRegeneration {
         private double _lastHealthRegenTime = 0;
         private StardewRegenConfig _config;
 
-        private List<Action<Farmer, double>> _regens = new List<Action<Farmer, double>>();
-
         public override void Entry(IModHelper helper) {
             _config = helper.ReadConfig<StardewRegenConfig>();
             PlayerEvents.LoadedGame += PlayerEvents_LoadedGame;
