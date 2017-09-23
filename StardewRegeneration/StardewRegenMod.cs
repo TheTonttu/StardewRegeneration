@@ -2,12 +2,8 @@
 using StardewModdingAPI.Events;
 using StardewValley;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Tonttu.StardewValley.Mods.StardewRegeneration {
+namespace Tonttu.StardewValleyGame.Mods.StardewRegeneration {
     public class StardewRegenMod : Mod {
 
         private double _lastStaminaRegenTime = 0;
@@ -16,15 +12,15 @@ namespace Tonttu.StardewValley.Mods.StardewRegeneration {
 
         public override void Entry(IModHelper helper) {
             _config = helper.ReadConfig<StardewRegenConfig>();
-            PlayerEvents.LoadedGame += PlayerEvents_LoadedGame;
+            SaveEvents.AfterLoad += SaveEvents_AfterLoad;
         }
 
-        private void PlayerEvents_LoadedGame(object sender, EventArgsLoadedGameChanged e) {
+        private void SaveEvents_AfterLoad(object sender, EventArgs e) {
             GameEvents.UpdateTick += GameEvents_UpdateTick;
         }
 
         private void GameEvents_UpdateTick(object sender, EventArgs e) {
-            Farmer player = Game1.player;
+            StardewValley.Farmer player = Game1.player;
             if (player == null) { return; }
 
             double currentTime = Game1.currentGameTime.TotalGameTime.TotalSeconds;
@@ -32,7 +28,7 @@ namespace Tonttu.StardewValley.Mods.StardewRegeneration {
             DoStaminaRegen(player, currentTime);
         }
 
-        private void DoHealthRegen(Farmer player, double currentTime) {
+        private void DoHealthRegen(StardewValley.Farmer player, double currentTime) {
             if (!_config.HealthRegenEnabled) { return; }
             if (IsInCooldown(currentTime, _lastHealthRegenTime, _config.HealthRegenInterval)) { return; }
 
@@ -42,7 +38,7 @@ namespace Tonttu.StardewValley.Mods.StardewRegeneration {
             }
         }
 
-        private void DoStaminaRegen(Farmer player, double currentTime) {
+        private void DoStaminaRegen(StardewValley.Farmer player, double currentTime) {
             if (!_config.StaminaRegenEnabled) { return; }
             if (IsInCooldown(currentTime, _lastStaminaRegenTime, _config.StaminaRegenInterval)) { return; }
 

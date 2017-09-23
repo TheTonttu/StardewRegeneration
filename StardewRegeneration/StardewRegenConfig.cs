@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tonttu.StardewValley.Mods.StardewRegeneration {
+﻿namespace Tonttu.StardewValleyGame.Mods.StardewRegeneration {
     public class StardewRegenConfig {
         public bool HealthRegenEnabled { get; set; }
         public int HealthRegenAmount { get; set; }
