@@ -2,7 +2,6 @@
 
 [Stardew Valley](http://stardewvalley.net/) mod that adds configurable basic health and stamina regeneration.
 
-Developed for [SMAPI](https://github.com/Pathoschild/SMAPI/) 1.5.
 
 ### Config
 
