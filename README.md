@@ -2,6 +2,7 @@
 
 [Stardew Valley](http://stardewvalley.net/) mod that adds configurable basic health and stamina regeneration.
 
+Compatible with [SMAPI](https://github.com/Pathoschild/SMAPI/) v1.15.4
 
 ### Config
 
@@ -9,11 +10,11 @@ After starting the game once the mod will generate default config.json file into
 
 The config file has following settings available:
 
-|Setting | Description|
-|:---|:---|
-|HealthRegenEnabled|Enable or disable the health regeneration|
-|HealthRegenAmount|Health regenerated per interval|
-|HealthRegenInterval|Health regeneration interval in seconds|
-|StaminaRegenEnabled|Enable or disable the stamina regeneration|
-|StaminaRegenAmount|Stamina regenerated per interval|
-|StaminaRegenInterval|Stamina regen interval in seconds|
+|Setting | Description|Default|Data type|
+|:---|:---|:---|:---|
+|HealthRegenEnabled|Enable or disable the health regeneration|enabled|boolean|
+|HealthRegenAmount|Health regenerated per interval|1 hp|integer|
+|HealthRegenInterval|Health regeneration interval in seconds|5 sec|float|
+|StaminaRegenEnabled|Enable or disable the stamina regeneration|enabled|boolean|
+|StaminaRegenAmount|Stamina regenerated per interval|1 sp|integer|
+|StaminaRegenInterval|Stamina regen interval in seconds|2 sec|float|
