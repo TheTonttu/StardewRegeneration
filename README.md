@@ -2,9 +2,10 @@
 
 [Stardew Valley](http://stardewvalley.net/) mod that adds configurable basic health and stamina regeneration.
 
-Prerequisites:
-- Stardew Valley 1.3.21 or later
-- [SMAPI](https://smapi.io/) v2.6 beta 17 or later
+### Prerequisites
+
+Stardew Valley 1.3.21 or later  
+[SMAPI](https://smapi.io/) v2.6 beta 17 or later
 
 ### Config
 
