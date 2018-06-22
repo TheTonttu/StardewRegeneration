@@ -2,11 +2,11 @@
 
 [Stardew Valley](http://stardewvalley.net/) mod that adds configurable basic health and stamina regeneration.
 
-Compatible with [SMAPI](https://github.com/Pathoschild/SMAPI/) v1.15.4
+Prerequisites:
 
 ### Config
 
-After starting the game once the mod will generate default config.json file into the mod directory.
+Config.json with default settings will be created into the mod directory on first launch.
 
 The config file has following settings available:
 
