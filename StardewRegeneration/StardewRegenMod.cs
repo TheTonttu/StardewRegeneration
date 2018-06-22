@@ -38,15 +38,16 @@ namespace Tonttu.StardewValleyGame.Mods.StardewRegeneration {
         }
 
         private void GameEvents_UpdateTick(object sender, EventArgs e) {
-            StardewValley.Farmer player = Game1.player;
-            if (player == null) { return; }
+            Farmer player = Game1.player;
+            bool isPaused = !Game1.shouldTimePass();
+            if (player == null || isPaused) { return; }
 
             double currentTime = Game1.currentGameTime.TotalGameTime.TotalSeconds;
             DoHealthRegen(player, currentTime);
             DoStaminaRegen(player, currentTime);
         }
 
-        private void DoHealthRegen(StardewValley.Farmer player, double currentTime) {
+        private void DoHealthRegen(Farmer player, double currentTime) {
             if (!_config.HealthRegenEnabled) { return; }
             if (IsInCooldown(currentTime, _lastHealthRegenTime, _config.HealthRegenInterval)) { return; }
 
@@ -56,7 +57,7 @@ namespace Tonttu.StardewValleyGame.Mods.StardewRegeneration {
             }
         }
 
-        private void DoStaminaRegen(StardewValley.Farmer player, double currentTime) {
+        private void DoStaminaRegen(Farmer player, double currentTime) {
             if (!_config.StaminaRegenEnabled) { return; }
             if (IsInCooldown(currentTime, _lastStaminaRegenTime, _config.StaminaRegenInterval)) { return; }
 
