@@ -62,8 +62,8 @@ namespace Tonttu.StardewValleyGame.Mods.StardewRegeneration {
             if (IsInCooldown(currentTime, _lastStaminaRegenTime, _config.StaminaRegenInterval)) { return; }
 
             _lastStaminaRegenTime = Game1.currentGameTime.TotalGameTime.TotalSeconds;
-            if (player.stamina < player.maxStamina) {
-                player.stamina = Math.Min(player.stamina + _config.StaminaRegenAmount, player.maxStamina);
+            if (player.Stamina < player.MaxStamina) {
+                player.Stamina = Math.Min(player.stamina + _config.StaminaRegenAmount, player.MaxStamina);
             }
         }
 
