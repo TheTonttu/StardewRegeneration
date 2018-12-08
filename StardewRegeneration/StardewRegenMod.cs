@@ -30,14 +30,20 @@ namespace Tonttu.StardewValleyGame.Mods.StardewRegeneration {
 
         public override void Entry(IModHelper helper) {
             _config = helper.ReadConfig<StardewRegenConfig>();
-            SaveEvents.AfterLoad += SaveEvents_AfterLoad;
+
+            Helper.Events.GameLoop.SaveLoaded += GameLoop_SaveLoaded;
+            Helper.Events.GameLoop.ReturnedToTitle += GameLoop_ReturnedToTitle;
         }
 
-        private void SaveEvents_AfterLoad(object sender, EventArgs e) {
-            GameEvents.UpdateTick += GameEvents_UpdateTick;
+        private void GameLoop_SaveLoaded(object sender, SaveLoadedEventArgs e) {
+            Helper.Events.GameLoop.UpdateTicked += GameLoop_UpdateTicked;
         }
 
-        private void GameEvents_UpdateTick(object sender, EventArgs e) {
+        private void GameLoop_ReturnedToTitle(object sender, ReturnedToTitleEventArgs e) {
+            Helper.Events.GameLoop.UpdateTicked -= GameLoop_UpdateTicked;
+        }
+
+        private void GameLoop_UpdateTicked(object sender, UpdateTickedEventArgs e) {
             Farmer player = Game1.player;
             bool isPaused = !Game1.shouldTimePass();
             if (player == null || isPaused) { return; }

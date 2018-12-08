@@ -5,7 +5,7 @@
 ### Prerequisites
 
 Stardew Valley 1.3.32 or later  
-[SMAPI](https://smapi.io/) v2.8.2 or later
+[SMAPI](https://smapi.io/) v2.9.1 or later
 
 ### Config
 
