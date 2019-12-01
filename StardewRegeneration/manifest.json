@@ -1,10 +1,10 @@
 ﻿{
   "Name": "Stardew Regeneration",
   "Author": "Tonttu",
-  "Version": "2.0.0",
+  "Version": "2.0.1",
   "Description": "Configurable health and stamina regeneration.",
   "UniqueID": "2b2a296a-a155-48f3-afb8-c02c27923aff",
   "EntryDll": "StardewRegeneration.dll",
   "UpdateKeys": [ "GitHub:TheTonttu/StardewRegeneration" ],
-  "MinimumApiVersion": "2.9.1"
+  "MinimumApiVersion": "3.0.0"
 }
