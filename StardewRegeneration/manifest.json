@@ -1,7 +1,7 @@
 ﻿{
   "Name": "Stardew Regeneration",
   "Author": "Tonttu",
-  "Version": "2.0.1",
+  "Version": "2.0.2",
   "Description": "Configurable health and stamina regeneration.",
   "UniqueID": "2b2a296a-a155-48f3-afb8-c02c27923aff",
   "EntryDll": "StardewRegeneration.dll",
